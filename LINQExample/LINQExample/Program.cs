@@ -6,6 +6,9 @@ namespace LINQExample
     {
         static void Main(string[] args)
         {
+            SimpleExample.StartWithBasicExample();
+            SimpleExample.StartLINQExample();
+            
             Console.ReadLine();
         }
     }
