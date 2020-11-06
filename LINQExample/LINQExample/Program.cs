@@ -8,6 +8,8 @@ namespace LINQExample
         {
             SimpleExample.StartWithBasicExample();
             SimpleExample.StartLINQExample();
+            SimpleExample.StartLinqExtentionExample();
+            SimpleExample.StartCombineExample();
             
             Console.ReadLine();
         }
