@@ -6,10 +6,12 @@ namespace LINQExample
     {
         static void Main(string[] args)
         {
-            SimpleExample.StartWithBasicExample();
-            SimpleExample.StartLINQExample();
-            SimpleExample.StartLinqExtentionExample();
-            SimpleExample.StartCombineExample();
+            // SimpleExample.StartWithBasicExample();
+            // SimpleExample.StartLINQExample();
+            // SimpleExample.StartLinqExtentionExample();
+            // SimpleExample.StartCombineExample();
+            
+            SecondExample.WhereExample();
             
             Console.ReadLine();
         }
