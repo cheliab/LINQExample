@@ -11,7 +11,8 @@ namespace LINQExample
             // SimpleExample.StartLinqExtentionExample();
             // SimpleExample.StartCombineExample();
             
-            SecondExample.WhereExample();
+            // SecondExample.WhereExample();
+            SecondExample.WhereSecondExample();
             
             Console.ReadLine();
         }
