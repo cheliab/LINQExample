@@ -21,6 +21,18 @@ namespace LINQExample
     /// </summary>
     public class SecondExample
     {
+        static List<User> users = new List<User>
+        {
+            new User { Name = "Павел", Age = 23, Languages = new List<string>{"английский", "немецкий"}},
+            new User { Name = "Вика", Age = 25, Languages = new List<string>{"английский", "французский"}},
+            new User { Name = "Макс", Age = 30, Languages = new List<string>{"английский", "испанский"}},
+            new User { Name = "Артем", Age = 25, Languages = new List<string>{"английский", "португальский"}},
+            new User { Name = "Петр", Age = 26, Languages = new List<string>{"немецкий", "португальский"}}
+        };
+        
+        /// <summary>
+        /// Выборка всех четных и больше 10
+        /// </summary>
         public static void WhereExample()
         {
             int[] numbers = {1, 2, 3, 4, 10, 20, 34, 54, 66, 77, 88};
@@ -45,13 +57,6 @@ namespace LINQExample
         /// </summary>
         public static void WhereSecondExample()
         {
-            List<User> users = new List<User>
-            {
-                new User { Name = "Павел", Age = 23, Languages = new List<string>{"английский", "немецкий"}},
-                new User { Name = "Вика", Age = 25, Languages = new List<string>{"английский", "французский"}},
-                new User { Name = "Макс", Age = 30, Languages = new List<string>{"английский", "испанский"}}
-            };
-
             var selectedUsers = from user in users where user.Age > 24 select user;
 
             foreach (var user in selectedUsers) 
@@ -61,6 +66,26 @@ namespace LINQExample
 
             foreach (var user in secondSelectedUsers)
                 Console.WriteLine($"{user.Name} {user.Age}");
+        }
+
+        /// <summary>
+        /// Пример сложного фильтра
+        /// </summary>
+        public static void ComplexFilterExample()
+        {
+            var selectedUsers = from user in users
+                from language in user.Languages
+                where user.Age < 28
+                where language == "португальский"
+                select user;
+
+            foreach (var selectedUser in selectedUsers)
+                Console.WriteLine(selectedUser.Name + " - " + selectedUser.Age);
+
+            var secondSelectedUsers = users.SelectMany(user => user.Languages,
+                    (user, lang) => new {User = user, Language = lang})
+                .Where(user => user.Language == "португальский" && user.User.Age < 28)
+                .Select(user => user.User);
         }
     }
 }

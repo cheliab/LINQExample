@@ -12,7 +12,8 @@ namespace LINQExample
             // SimpleExample.StartCombineExample();
             
             // SecondExample.WhereExample();
-            SecondExample.WhereSecondExample();
+            // SecondExample.WhereSecondExample();
+            SecondExample.ComplexFilterExample();
             
             Console.ReadLine();
         }
