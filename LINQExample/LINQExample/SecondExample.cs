@@ -87,5 +87,55 @@ namespace LINQExample
                 .Where(user => user.Language == "португальский" && user.User.Age < 28)
                 .Select(user => user.User);
         }
+
+        /// <summary>
+        /// Пример проекции - Получаем свойство
+        /// </summary>
+        public static void SelectFieldExample()
+        {
+            var names = from user in users select user.Name;
+
+            foreach (var name in names)
+            {
+                Console.WriteLine(name);
+            }
+            
+            Console.WriteLine(new string('-', 20));
+
+            var namesSecond = users.Select(user => user.Name);
+
+            foreach (var name in namesSecond)
+            {
+                Console.WriteLine(name);
+            }
+        }
+
+        /// <summary>
+        /// Пример проекции - Анонимные типы
+        /// </summary>
+        public static void SelectAnonymousType()
+        {
+            var items = from user in users
+                select new
+                {
+                    FirstName = user.Name,
+                    DateOfBirth = DateTime.Now.Year - user.Age
+                };
+
+            foreach (var item in items)
+            {
+                Console.WriteLine(item);
+            }
+            
+            Console.WriteLine(new string('-', 20));
+
+            var secondItems = users.Select(user => new
+                {FirstName = user.Name, DateOfBirth = DateTime.Now.Year - user.Age});
+
+            foreach (var item in secondItems)
+            {
+                Console.WriteLine(item);
+            }
+        }
     }
 }
