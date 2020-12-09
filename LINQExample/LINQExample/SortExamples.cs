@@ -53,5 +53,23 @@ namespace LINQExample
                 Console.WriteLine(user.Name);
             }
         }
+
+        public static void ThirdExample()
+        {
+            int[] numbers = { 3, 12, 4, 10, 34, 20, 55, -66, 77, 88, 4 };
+            var sortedNumbers = numbers.OrderBy(number => number);
+            
+            List<User> users = new List<User>
+            {
+                new User {Name = "Владимир", Age = 23 },
+                new User {Name = "Генадий", Age = 20 },
+                new User {Name = "Борис", Age = 23 },
+                new User {Name = "Аркадий", Age = 24 }
+            };
+
+            var sortedUsers = users.OrderBy(user => user.Name);
+
+            var descSortUsers = users.OrderByDescending(user => user.Name);
+        }
     }
 }
