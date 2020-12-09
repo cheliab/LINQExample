@@ -1,27 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using LINQExample.Objects;
 
 namespace LINQExample
 {
-    class User
-    {
-        public string Name { get; set; }
-        public int Age { get; set; }
-        public List<string> Languages { get; set; }
-
-        public User()
-        {
-            Languages = new List<string>();
-        }
-    }
-    
-    class Phone 
-    {
-        public string Name { get; set; }
-        public string Company { get; set; }
-    }
-
     /// <summary>
     /// Фильтрация выборки и проекция
     /// </summary>
