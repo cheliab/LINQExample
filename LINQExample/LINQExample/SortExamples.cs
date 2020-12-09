@@ -41,6 +41,17 @@ namespace LINQExample
             {
                 Console.WriteLine(user.Name);
             }
+            
+            Console.WriteLine(new string('-', 20));
+
+            var descSortedUsers = from dUser in users
+                orderby dUser.Name descending
+                select dUser;
+
+            foreach (var user in descSortedUsers)
+            {
+                Console.WriteLine(user.Name);
+            }
         }
     }
 }
