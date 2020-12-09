@@ -16,7 +16,9 @@ namespace LINQExample
             // SecondExample.ComplexFilterExample();
             // SecondExample.SelectFieldExample();
             // SecondExample.SelectAnonymousType();
-            SecondExample.SelectFromMultipleSources();
+            // SecondExample.SelectFromMultipleSources();
+            
+            SortExamples.FirstExample();
             
             Console.ReadLine();
         }
