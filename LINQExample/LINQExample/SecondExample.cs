@@ -16,6 +16,12 @@ namespace LINQExample
         }
     }
     
+    class Phone 
+    {
+        public string Name { get; set; }
+        public string Company { get; set; }
+    }
+
     /// <summary>
     /// Фильтрация выборки и проекция
     /// </summary>
@@ -130,11 +136,41 @@ namespace LINQExample
             Console.WriteLine(new string('-', 20));
 
             var secondItems = users.Select(user => new
-                {FirstName = user.Name, DateOfBirth = DateTime.Now.Year - user.Age});
+            {
+                FirstName = user.Name, 
+                DateOfBirth = DateTime.Now.Year - user.Age
+            });
 
             foreach (var item in secondItems)
             {
                 Console.WriteLine(item);
+            }
+        }
+
+        /// <summary>
+        /// Выборка из нескольких источников
+        /// </summary>
+        public static void SelectFromMultipleSources()
+        {
+            List<User> users = new List<User>
+            {
+                new User { Name = "Макс", Age = 3 },
+                new User { Name = "Паша", Age = 30 }
+            };
+            
+            List<Phone> phones = new List<Phone>
+            {
+                new Phone { Name = "iPhone 12", Company = "Apple" },
+                new Phone { Name = "Mi 10", Company = "Xiaomi" }
+            };
+
+            var people = from user in users
+                from phone in phones
+                select new {Name = user.Name, Phone = phone.Name};
+
+            foreach (var p in people)
+            {
+                Console.WriteLine($"{p.Name} - {p.Phone}");
             }
         }
     }

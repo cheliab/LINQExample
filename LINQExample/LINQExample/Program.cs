@@ -15,7 +15,8 @@ namespace LINQExample
             // SecondExample.WhereSecondExample();
             // SecondExample.ComplexFilterExample();
             // SecondExample.SelectFieldExample();
-            SecondExample.SelectAnonymousType();
+            // SecondExample.SelectAnonymousType();
+            SecondExample.SelectFromMultipleSources();
             
             Console.ReadLine();
         }
