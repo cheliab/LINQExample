@@ -79,6 +79,7 @@ namespace LINQExample
         {
             string[] teams = {"Бавария", "Боруссия", "Реал Мадрид", "Манчестер Сити", "ПСЖ", "Барселона"};
 
+            // Выполнение запроса
             var selectedTeams = (from t in teams
                 where t.ToUpper().StartsWith("Б")
                 orderby t
@@ -86,6 +87,7 @@ namespace LINQExample
             
             Console.WriteLine(selectedTeams.Count()); // 3
 
+            // Изменение не влияет на список
             teams[0] = "Ювентус";
             
             Console.WriteLine(selectedTeams.Count()); // 3
