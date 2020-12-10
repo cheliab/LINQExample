@@ -19,7 +19,8 @@ namespace LINQExample
             // SecondExample.SelectFromMultipleSources();
             
             // SortExamples.FirstExample();
-            SortExamples.SortComplexObjects();
+            // SortExamples.SortComplexObjects();
+            SortExamples.MultiSortExample();
 
             Console.ReadLine();
         }
