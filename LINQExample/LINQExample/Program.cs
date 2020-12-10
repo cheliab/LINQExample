@@ -22,7 +22,7 @@ namespace LINQExample
             // SortExamples.SortComplexObjects();
             // SortExamples.MultiSortExample();
             
-            ImmediateExecution.FirstExample();
+            ImmediateExecutionExample.FirstExample();
 
             Console.ReadLine();
         }

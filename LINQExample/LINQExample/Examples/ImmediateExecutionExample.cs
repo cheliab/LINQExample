@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace LINQExample
 {
-    public class ImmediateExecution
+    public class ImmediateExecutionExample
     {
         
         /// <summary>
