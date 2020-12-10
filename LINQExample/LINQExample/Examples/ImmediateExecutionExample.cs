@@ -25,7 +25,7 @@ namespace LINQExample
             teams[1] = "Челси";
 
             // выполнение запроса
-            foreach (var team in selectedTeams)
+            foreach (var team in selectedTeams) // 1
             {
                 Console.WriteLine(team);
             }
@@ -43,11 +43,11 @@ namespace LINQExample
                 orderby t
                 select t).Count();
             
-            Console.WriteLine(i);
+            Console.WriteLine(i); // 3
 
             teams[0] = "Ювентус";
             
-            Console.WriteLine(i);
+            Console.WriteLine(i); // 3
         }
         
         /// <summary>
@@ -57,16 +57,38 @@ namespace LINQExample
         {
             string[] teams = {"Бавария", "Боруссия", "Реал Мадрид", "Манчестер Сити", "ПСЖ", "Барселона"};
 
+            // Определение запроса
             var selectedTeams = from t in teams
                 where t.ToUpper().StartsWith("Б")
                 orderby t
                 select t;
             
-            Console.WriteLine(selectedTeams.Count());
+            // Выполнение запроса
+            Console.WriteLine(selectedTeams.Count()); // 3
 
             teams[0] = "Ювентус";
             
-            Console.WriteLine(selectedTeams.Count());
+            // Выполнение запроса
+            Console.WriteLine(selectedTeams.Count()); // 2
+        }
+        
+        /// <summary>
+        /// Пример выгрузкой в список
+        /// </summary>
+        public static void FourthExample()
+        {
+            string[] teams = {"Бавария", "Боруссия", "Реал Мадрид", "Манчестер Сити", "ПСЖ", "Барселона"};
+
+            var selectedTeams = (from t in teams
+                where t.ToUpper().StartsWith("Б")
+                orderby t
+                select t).ToList();
+            
+            Console.WriteLine(selectedTeams.Count()); // 3
+
+            teams[0] = "Ювентус";
+            
+            Console.WriteLine(selectedTeams.Count()); // 3
         }
     }
 }

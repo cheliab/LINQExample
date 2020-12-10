@@ -27,7 +27,9 @@ namespace LINQExample
             
             //  - Отложенное и немедленное выполнение 
             // ImmediateExecutionExample.FirstExample();
-            ImmediateExecutionExample.SecondExample();
+            // ImmediateExecutionExample.SecondExample();
+            // ImmediateExecutionExample.ThirdExample();
+            ImmediateExecutionExample.FourthExample();
 
             Console.ReadLine();
         }
