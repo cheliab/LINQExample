@@ -29,6 +29,25 @@ namespace LINQExample
             {
                 Console.WriteLine(team);
             }
-        } 
+        }
+
+        /// <summary>
+        /// Пример немедленного выполнения запроса
+        /// </summary>
+        public static void SecondExample()
+        {
+            string[] teams = {"Бавария", "Боруссия", "Реал Мадрид", "Манчестер Сити", "ПСЖ", "Барселона"};
+
+            int i = (from t in teams
+                where t.ToUpper().StartsWith("Б")
+                orderby t
+                select t).Count();
+            
+            Console.WriteLine(i);
+
+            teams[0] = "Ювентус";
+            
+            Console.WriteLine(i);
+        }
     }
 }

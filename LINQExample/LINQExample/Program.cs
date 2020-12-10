@@ -6,11 +6,13 @@ namespace LINQExample
     {
         static void Main(string[] args)
         {
+            //  - Примеры простой выборки
             // SimpleExample.StartWithBasicExample();
             // SimpleExample.StartLINQExample();
             // SimpleExample.StartLinqExtentionExample();
             // SimpleExample.StartCombineExample();
             
+            //  - Фильтры и др.
             // SecondExample.WhereExample();
             // SecondExample.WhereSecondExample();
             // SecondExample.ComplexFilterExample();
@@ -18,11 +20,14 @@ namespace LINQExample
             // SecondExample.SelectAnonymousType();
             // SecondExample.SelectFromMultipleSources();
             
+            //  - Сортировка
             // SortExamples.FirstExample();
             // SortExamples.SortComplexObjects();
             // SortExamples.MultiSortExample();
             
-            ImmediateExecutionExample.FirstExample();
+            //  - Отложенное и немедленное выполнение 
+            // ImmediateExecutionExample.FirstExample();
+            ImmediateExecutionExample.SecondExample();
 
             Console.ReadLine();
         }
