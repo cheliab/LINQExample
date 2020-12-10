@@ -49,5 +49,24 @@ namespace LINQExample
             
             Console.WriteLine(i);
         }
+        
+        /// <summary>
+        /// Пример когда Count учитывает изменения в массиве
+        /// </summary>
+        public static void ThirdExample()
+        {
+            string[] teams = {"Бавария", "Боруссия", "Реал Мадрид", "Манчестер Сити", "ПСЖ", "Барселона"};
+
+            var selectedTeams = from t in teams
+                where t.ToUpper().StartsWith("Б")
+                orderby t
+                select t;
+            
+            Console.WriteLine(selectedTeams.Count());
+
+            teams[0] = "Ювентус";
+            
+            Console.WriteLine(selectedTeams.Count());
+        }
     }
 }
